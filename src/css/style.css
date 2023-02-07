@@ -87,7 +87,7 @@ body a {
 }
 
 .home {
-  background-image: url("../../public/images/home_back.jpg");
+  background-image: url("../images/home_back.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -102,10 +102,12 @@ body a {
 .home .banner_text {
   text-align: left;
   padding: 20px 0;
+  height: -moz-fit-content;
   height: fit-content;
   background: rgba(158, 158, 158, 0.631372549);
   padding: 53px 42px;
   color: white;
+  box-shadow: -19px 20px 15px 6px #9e9e9e;
 }
 .home .banner_text h1 {
   padding: 3px 0;
@@ -186,7 +188,7 @@ body a {
   position: relative;
 }
 .contact_us.bck_img {
-  background-image: url("../../public/images/contact_bk.jpg");
+  background-image: url("../images/contact_bk.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 }
