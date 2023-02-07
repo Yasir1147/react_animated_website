@@ -1,13 +1,15 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import Model from './Modal';
 
+
 const Contact = () => {
+    const [number,setNumber] = useState(0)
 
+    const [state,setState] = useState({
+        display: "none",
+    })
 
-    const [state,setState] = useState({ display: "none" })
-
-
-    const [inputData,setInputData] = useState({
+    const [inputData, setInputData] = useState({
         fname: '',
         lname: '',
         email: '',
@@ -15,12 +17,12 @@ const Contact = () => {
     });
 
 
-    const [formData,setFormData] =useState();
+    const [formData, setFormData] = useState([]);
 
     const InputEvent = (event) => {
 
         let {name, value} = event.target;
-        setInputData((Prev)=>{
+        setInputData((Prev) => {
             return {
                 ...Prev,
                 [name]: value,
@@ -28,26 +30,27 @@ const Contact = () => {
         });
     }
 
+    const SubmintForm = (event) => {
+        setFormData((Preval)=>{
+            Preval.push(inputData);
+                return Preval;
+        });
 
-    const SubmintForm = (event)=>{
+        setState({display: "block", zIndex: '999999'});
 
-        console.log(inputData);
-        setFormData(inputData);
-        setState({ display: "block"});
-
+        console.log(formData);
+        document.body.classList.add('body');
         setInputData({
             fname: '',
             lname: '',
             email: '',
             phone: ''
         });
-
         event.preventDefault();
     }
-
     return (<>
 
-            <Model inputdata={formData} state={state} setSate={setState} />
+            <Model inputdata={formData} state={state} setSate={setState}/>
             <div className="container-fluid contact_us bck_img">
                 <div className="contact_form d-flex align-items-center">
                     <form onSubmit={SubmintForm}>

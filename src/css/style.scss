@@ -1,5 +1,35 @@
-* {
+:root {
+  --b-bdy-color: #000000a6;
+
+}
+.bg-black{
+
+}
+body {
   margin: 0;
+  padding: 0;
+  color: var(--b-bdy-colo);
+  font-family: 'Open Sans', sans-serif !important;
+
+
+  a {
+    color: inherit;
+    font-size: 18px;
+  }
+
+}
+.body{
+  &:after{
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background-color: rgba(0,0,0,0.5);
+  }
 }
 
 .header {
@@ -15,11 +45,235 @@
   }
 
   .menu {
-    a {
+    margin-right: 20px;
+    .active_class {
+     &.active {
+      color: #4AB2F9;
+       font-weight: 600;
+       border-bottom: 1px solid black;
 
-      text-decoration: unset !important;
     }
+  }
+
+    a {
+      text-decoration: unset !important;
+      padding: 14px 15px;
+      font-size: 1.1rem;
+      font-weight: 500;
+
+      &:hover {
+        font-weight: bold;
+        color: #4AB2F9;
+        border-bottom: 1px solid black;
+
+      }
+    }
+
+
+  }
+
+
+}
+.about{
+  background: #9e9e9e0a;
+  .content{
+    min-height: calc(100vh - 136px);
+  }
+  .banner_text {
+    text-align: left;
+    padding: 20px 0;
+    height: fit-content;
+
+    background: #9e9e9ea1;
+    padding: 53px 42px;
+    color: white;
+    //border-radius: 13px;
+
+    h1 {
+      padding: 3px 0;
+
+    }
+
+    h2 {
+      color: #4AB2F9;
+    }
+
+    p {
+      font-width: bold;
+      padding-bottom: 10px;
+    }
+
+    a {
+      text-decoration: unset;
+      padding: 11px 20px;
+      border-radius: 50px;
+      border: 2px solid #4AB2F9;
+      font-size: 1rem;
+    }
+
+
+  }
+}
+.home {
+  background-image: url("../../public/images/home_back.jpg");
+  background-repeat: no-repeat;
+
+  background-position: center;
+   background-size: cover;
+
+  .content{
+    min-height: calc(100vh - 136px);
+  }
+    .card{
+
+      justify-content: end;
+      transform: skewX(10deg);
+
+    }
+
+  .banner_text {
+    text-align: left;
+    padding: 20px 0;
+    height: fit-content;
+
+    background: #9e9e9ea1;
+    padding: 53px 42px;
+    color: white;
+    //border-radius: 13px;
+
+    h1 {
+      padding: 3px 0;
+
+    }
+
+    h2 {
+      color: #4AB2F9;
+    }
+
+    p {
+      font-width: bold;
+      padding-bottom: 10px;
+    }
+
+    a {
+      text-decoration: unset;
+      padding: 11px 20px;
+      border-radius: 50px;
+      border: 2px solid #4AB2F9;
+      font-size: 1rem;
+    }
+
+
   }
 }
 
+.footer {
+  padding: 0;
+
+  p {
+    margin: 0;
+    padding: 10px;
+  }
+}
+
+.services {
+  .heading {
+    font-size: 1.7rem;
+    padding: 10px;
+
+  }
+
+  .card {
+    .card_img {
+      width: 100%;
+      height: 242px;
+      overflow: hidden;
+      margin: 0 auto;
+      cursor: pointer;
+    }
+
+    .card_img img {
+      width: 100%;
+      transition: 0.5s all ease-in-out;
+    }
+
+    .card_img img:hover {
+      transform: scale(1.5)
+    }
+
+    width: 18rem;
+    text-align: left;
+
+    .card-title {
+      font-size: 1.3rem;
+
+      &:after {
+        content: "";
+        width: 100%;
+        height: 1px;
+        background: #cccccc6b;
+        display: block;
+        margin-top: 10px;
+
+      }
+    }
+
+    .card-text {
+      font-size: .9rem;
+    }
+
+    a {
+      padding: 7px 11px;
+      border: 1px solid #03a9f4cf;
+      font-size: .9rem;
+      transition: 0.3s;
+
+      &:hover {
+        background: #03a9f4cf;
+        color: #fff !important;
+        cursor: pointer;
+      }
+    }
+
+  }
+}
+.contact_us{
+  height: calc(100vh - 150px);
+  position: relative;
+   &.bck_img{
+    background-image: url("../../public/images/contact_bk.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+     &:after{
+        position: absolute;
+        top: 0;
+       content: "";
+       background: #00000069;
+       height: 100%;
+       width: 100%;
+       left: 0;
+
+       z-index: 0;
+     }
+  }
+
+
+
+  .contact_form {
+    height: 100%;
+    max-width: 550px;
+    margin: 0 auto;
+    text-align: left;
+    form {
+      background: white;
+      width: 100%;
+      z-index: 9999;
+      color:inherit;
+      padding: 42px 27px;
+      border-radius: 5px;
+
+    }
+
+  }
+}
 
